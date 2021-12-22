@@ -1,7 +1,6 @@
 package lounge
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"os"
@@ -55,7 +54,7 @@ func WithOutput(w io.Writer) Option {
 // according to the options provided
 func NewDefaultLog(opts ...Option) Log {
 	dl := &DefaultLog{
-		output: bufio.NewWriter(os.Stdout),
+		output: os.Stdout,
 		pairs:  make(map[string]string),
 	}
 
